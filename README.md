@@ -13,11 +13,11 @@ Requirements
 Instalation
 ============
 
-1) Clone repo using ssh (make sure already have ssh on github account)
+Clone repo using ssh (make sure already have ssh on github account)
 
     git clone git@github.com:mutiaayuriz/leaflet-takehometest.git
 
-2) Install node module
+Install node module
 
     npm install
 
