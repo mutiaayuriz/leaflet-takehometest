@@ -6,6 +6,8 @@ import { HomeService } from '../services/home.service';
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
+  providers: [HomeService],
+
 })
 export class MapComponent implements OnInit {
   public errorMessage: string = '';

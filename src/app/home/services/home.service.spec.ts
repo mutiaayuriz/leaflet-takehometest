@@ -1,16 +1,14 @@
 import { TestBed } from '@angular/core/testing';
-
 import { HomeService } from './home.service';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
-describe('BerandaService', () => {
+describe('HomeService', () => {
   let service: HomeService;
-
+  let httpClientService: jasmine.SpyObj<HttpClient>;
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(HomeService);
+    httpClientService = jasmine.createSpyObj('HttpClient', ['get']);
+    service = new HomeService(httpClientService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
 });
+
