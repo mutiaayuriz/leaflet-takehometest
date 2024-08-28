@@ -10,6 +10,12 @@ export class HomeService {
   constructor( private http: HttpClient) { }
 
   getData(): Observable<any> {
-    return this.http.get<any>(`${this.url}`);
+    return this.http.get<any>(`${this.url}`, {
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Methods": "GET",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
   }
 }

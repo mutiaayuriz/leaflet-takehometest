@@ -1,11 +1,12 @@
-FROM node:alpine
-
-WORKDIR /usr/src/app
-
-COPY . /usr/src/app
-
-RUN npm install -g @angular/cli
-
+FROM node:latest AS node
+WORKDIR /app
+COPY . .
 RUN npm install
+RUN npm run build
 
-CMD ["ng", "serve", "--host", "0.0.0.0"]
+#stage 2
+
+FROM httpd:alpine3.15
+
+WORKDIR /usr/local/apache2/htdocs
+COPY --from=node /app/dist/angular-project .
