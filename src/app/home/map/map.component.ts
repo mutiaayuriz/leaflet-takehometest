@@ -17,7 +17,6 @@ export class MapComponent implements OnInit {
     this.apiService.getData().subscribe({
       next: (data) => {
         if (data) {
-          console.log('dataaaa->', data);
           this.initMap(data);
           this.statusData = true;
         }
